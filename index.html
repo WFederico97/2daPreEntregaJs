@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">    
+    <title>ALZ seguros</title>
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+    
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0">Alianza broker de seguros</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="index.html">Home</a>
+          </nav>
+        </div>
+      </header>
+    
+      <main class="px-3">
+
+      <!---Saludo al usuario-->
+
+        <form id="formSaludo" class="row col-3"><br>
+            <p class="fw-bold text-white text-uppercase">Indicanos tu nombre</p>
+            <input type="text" class="form-control form-control-sm" placeholder="ingrese su nombre" id="inputNombre">
+            <button type="submit"  class="btn btn-info btn-outline-dark">Enviar</button>
+        </form><br>
+        <div id="saludoIndex"></div>
+        <p class="lead">Somos una PyME encargada de hacerte llegar la mejor opcion para asegurar tu casa, auto o incluso tu seguro de vida. Todo esto lo hacemos realidad gracias
+            a nuestros corredores, quienes estan altamente capacitados para asesorarte de la mejor manera y no solo cuidar de vos sino tambien cuidar tu bolsillo.
+        </p>
+        
+        <!--Muestra de empresas aseguradoras-->
+
+        <div class="row row-cols-1 row-cols-md-3  text-center d-flex">
+            <div class="col">
+              <div class="card mb-2 rounded-3 shadow-sm">
+                <div class="card-header py-3 bg-success">
+                  <h4 class="my-0 fw-normal text-dark">La Meridional</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title text-dark">$5000<small class="text-muted fw-light">/mes</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4 text-dark">
+                    <li>Titular + 3 del grupo familiar</li>
+                    <li>Seguro de vivienda y vida </li>
+                    <li>Sistema de seguridad las 24 hs , atencion todos los dias de la semana</li>
+                    <li>Acceso a scoring en base remuneracion laboral</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-outline-danger" id="boton1">Solicitalo aquí</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-2 rounded-3 shadow-sm">
+                <div class="card-header py-3 bg-warning">
+                  <h4 class="my-0 fw-normal text-dark">Hogar Sano</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title text-dark">$2400<small class="text-muted fw-light">/mes</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4 text-dark">
+                    <li>Titular</li>
+                    <li>Seguro de vivienda hasta $650 mil</li>
+                    <li>Descuentos en corralones y ferreterias adheridas</li>
+                    <li>25% de descuento en suscripcion a nuestro servicio de seguridad "Watch Neighbour"</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-outline-danger" id="boton2">Mas información</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-2 rounded-3 shadow-sm border-primary">
+                <div class="card-header py-3 text-white bg-primary border-primary">
+                  <h4 class="my-0 fw-normal text-dark">Suarez & Martinez</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title text-dark">$8000<small class="text-muted fw-light">/mes</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4 text-dark">
+                    <li class="fw-bold">¡La premium de la cartilla!</li>
+                    <li>Vida, vivienda y auto incluidos</li>
+                    <li>Sin limites de asegurados extra</li>
+                    <li>Soporte 24/7 donde quieras que estes</li>
+                    <li>Adhesion al sistema de cliente VIP, recibirás primicia en nuestros nuevos servicios
+                        , descuentos y ofertas especiales.
+                    </li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-primary" id="boton3">¡Lo quiero!</button>
+                </div>
+              </div>
+          </div>
+            <!---Canva para carrito de compras-->
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary btn-outline-warning btn-lg" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#canvaCarrito" aria-controls="offcanvasWithBothOptions">
+          Ver mi Pedido
+        </button>
+      </div>
+      <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="canvaCarrito"
+        aria-labelledby="canvaCarrito">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-dark" id="canvaCarritoTexto">Tu Pedido</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="canvaCarritoBody">
+          <div>
+            <p class="fs-bold" id="total"></p>
+          </div>
+          <div>
+            <button type="button" class="btn btn-danger btn-outline-dark" id="btnVaciarCarrito">Vaciar Carrito</button> 
+          </div>
+
+        </div>
+      </div>  
+      </main>
+    
+      <footer class="mt-auto text-white-50">
+        <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+      </footer>
+    </div>
+    
+    
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!--Js Script-->   
+    <script src="script.js"></script>     
+</body>
+</html>
