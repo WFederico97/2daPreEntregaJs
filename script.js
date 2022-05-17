@@ -36,6 +36,7 @@ let botonVaciar = document.querySelector('#btnVaciarCarrito')
 let seguroTotal = document.querySelector('#total')
 
 
+
 botonSeguro1.addEventListener('click', () =>{
     if(carrito.some(seguro => seguro.nombre === 'La Meridional')){
         let index = carrito.findIndex(seguro => seguro.nombre === 'La Meridional')
@@ -82,20 +83,26 @@ carrito.forEach(seguros => {
             <div class="card-header">${seguros.nombre}</div>
                 <div class="card-body">
                 <p class="card-text">$${seguros.precio}</p>
+                <p class="card-text">${seguros.cant}</p>
             </div>
         </div>
     `
 })
 
-botonVaciar.addEventListener('click', (e) =>{
-    e.localStorage.removeItem('seguros')
-    bodyCarrito.innerHTML += ``
-})
+const vaciarCarrito = () => {
+    botonVaciar.addEventListener('click', () => {
+        bodyCarrito.innerHTML = ""
+        carrito.splice(0, carrito.length);
+        seguroTotal.textContent = `Total: 0`;
+        console.log(carrito.length)
+    })
+}
 
 let mostrarTotal = () =>{
     
-    let precioFinal = carrito.reduce((acc, ite)=>acc + ite.precio * ite.cantidad ,0)
-    seguroTotal.textContent += `<h6 class="bg-danger">El total es : $${precioFinal}</h6>`
+    let precioFinal = carrito.reduce((acc, ite)=>acc + ite.precio * ite.cant ,0)
+    seguroTotal.innerHTML += `<h6 class="bg-danger">El total es : $${precioFinal}</h6>`
     ;
 }
 mostrarTotal()
+vaciarCarrito()
