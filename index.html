@@ -22,15 +22,6 @@
       </header>
     
       <main class="px-3">
-
-      <!---Saludo al usuario-->
-
-        <form id="formSaludo" class="row col-3"><br>
-            <p class="fw-bold text-white text-uppercase">Indicanos tu nombre</p>
-            <input type="text" class="form-control form-control-sm" placeholder="ingrese su nombre" id="inputNombre">
-            <button type="submit"  class="btn btn-info btn-outline-dark">Enviar</button>
-        </form><br>
-        <div id="saludoIndex"></div>
         <p class="lead">Somos una PyME encargada de hacerte llegar la mejor opcion para asegurar tu casa, auto o incluso tu seguro de vida. Todo esto lo hacemos realidad gracias
             a nuestros corredores, quienes estan altamente capacitados para asesorarte de la mejor manera y no solo cuidar de vos sino tambien cuidar tu bolsillo.
         </p>
@@ -51,7 +42,7 @@
                     <li>Sistema de seguridad las 24 hs , atencion todos los dias de la semana</li>
                     <li>Acceso a scoring en base remuneracion laboral</li>
                   </ul>
-                  <button type="button" class="w-100 btn btn-lg btn-outline-danger" id="boton1">Solicitalo aquí</button>
+                  <button type="button" class="w-100 btn btn-lg btn-outline-danger" id="0" onclick="añadirProducto(event)">Solicitalo aquí</button>
                 </div>
               </div>
             </div>
@@ -68,7 +59,7 @@
                     <li>Descuentos en corralones y ferreterias adheridas</li>
                     <li>25% de descuento en suscripcion a nuestro servicio de seguridad "Watch Neighbour"</li>
                   </ul>
-                  <button type="button" class="w-100 btn btn-lg btn-outline-danger" id="boton2">Mas información</button>
+                  <button type="button" class="w-100 btn btn-lg btn-outline-danger" id="1" onclick="añadirProducto(event)">Mas información</button>
                 </div>
               </div>
             </div>
@@ -88,7 +79,7 @@
                         , descuentos y ofertas especiales.
                     </li>
                   </ul>
-                  <button type="button" class="w-100 btn btn-lg btn-primary" id="boton3">¡Lo quiero!</button>
+                  <button type="button" class="w-100 btn btn-lg btn-primary" id="2" onclick="añadirProducto(event)">¡Lo quiero!</button>
                 </div>
               </div>
           </div>
@@ -106,14 +97,17 @@
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
+          
           <div id="canvaCarritoBody">
 
           </div>
+          
           <div id="total">
             
           </div>
-           <div>
-            <button type="button" class="btn btn-danger btn-outline-dark" id="btnVaciarCarrito">Vaciar Carrito</button> 
+           
+          <div>
+            <button type="button" class="btn btn-danger btn-outline-dark" id="btnVaciarCarrito" onclick="vaciarCarrito()">Vaciar Carrito</button> 
           </div>
 
         </div>
